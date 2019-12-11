@@ -24,7 +24,7 @@
      [:p.quote-content (:text @state)]
      [:p.quote-author (:author @state)]]
     [:div.quote-buttons
-     [:a {:href (str "https://twitter.com/intent/tweet?hashtags=quote&text=" (:text @state) " - " (:author @state))
+     [:a {:href (get-tweet-link state)
           :target "_blank"} "tweet"]
      [:button {:on-click #(fetch-link! state)} "next quote"]]]])
 
